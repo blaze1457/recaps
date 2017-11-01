@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="dirPagination.js"></script>
+	</head>
+	
+	<body>
+		<div ng-app="myApp" ng-controller="myctrl">
+
+			Search:<input type="text" ng-model='search.name' ><span class="glyphicon glyphicon-search"></span><br><br>
+			<div class="table-responsive">          
+				<table class="table">
+					<tr>
+						<th ng-click="orderByMe('name')">EmployeeName<span class="glyphicon glyphicon-sort-by-alphabet"></span></th>
+						<th ng-click="orderByMe('department')">Company <span class="glyphicon glyphicon-sort-by-alphabet"></span> </th>
+						<th>Place</th>
+						<th>Salary</th>
+					</tr>
+					<tr dir-paginate="employee in employees | orderBy:myOrderBy| filter:search|itemsPerPage:5">
+						<td>{{ employee.name}}</td>
+						<td>{{ employee.company }}</td>
+						<td>{{ employee.place}}</td>
+						<td>{{ employee.salary}}</td>	
+					</tr>
+				</table>
+			</div>
+			<dir-pagination-controls
+				   max-size="5"
+				   direction-links="true"
+				   boundary-links="true" >
+			</dir-pagination-controls>
+		</div>
+		
+		<script src="customJS.js"></script>
+
+	</body>
+</html>
+	

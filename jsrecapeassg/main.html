@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	
+	<body>
+	<div>
+		<button class="btn btn-primary" onclick="companies()">Companies</button><br><br>
+		<button class="btn btn-primary" onclick="employees()">Employees</button><br>
+	</div>
+	<div class="container">
+	<div class="table-responsive">
+		<button id="addcompany" class="btn btn-primary" onclick="onAddNewCompany()">Add Company</button>
+		<button id="addemployee" class="btn btn-primary" onclick="onAddNewEmployee()">Add Employee</button>
+		<table class="table" id="companytable"></table>
+		<table class="table" id="employeetable"></table>
+	</div>
+	</div>
+		<div id="edit">
+			<input type="text" id="id1">
+			<input type="text" id="name1">
+			<input type="text" id="company1">
+			<button onclick="onSaveCompany()" class="btn btn-success" id="saveButton">Save</button>
+			<button onclick="onUpdateCompany()" class="btn btn-success" id="updateButton">Update</button>
+			<button onclick="onCancel()" class="btn btn-danger">Cancel</button>
+			<button onclick="onresetCompany()" class="btn btn-warning" id= "resetforsave">Reset</button>
+			<button onclick="onresetadd()" class="btn btn-warning" id="resetforadd">Reset</button>
+		</div>
+		<div id="edit2">
+			<input type="text" id="id2">
+			<input type="text" id="name2">
+			<input type="text" id="company2">
+			<button onclick="onSaveEmployee()" class="btn btn-success" id="saveButton2">Save</button>
+			<button onclick="onUpdateEmployee()" class="btn btn-success"  id="updateButton2">Update</button>
+			<button onclick="onCancel2()" class="btn btn-danger" >Cancel</button>
+			<button onclick="onresetEmployee()" class="btn btn-warning" id= "resetforsave2">Reset</button>
+			<button onclick="onresetadd2()" class="btn btn-warning" id="resetforadd2">Reset</button>
+		</div>
+		
+		<script src="companyscript.js"></script>
+		<script src="employeescript.js"></script>
+	</body>
+
+</html>
